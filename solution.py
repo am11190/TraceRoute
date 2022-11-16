@@ -96,7 +96,7 @@ def get_route(hostname):
                 if whatReady[0] == []: # Timeout
                 #Fill in start
                 #append response to your dataframe including hop #, try #, and "Timeout" responses as required by the acceptance criteria
-                    tOut= "Timeout"
+                    tOut= "timeout"
                     df=df.append({'Hop Count':ttl, 'Try':tries + 1, 'IP':tOut, 'Hostname':tOut, 'Response Code':tOut}, ignore_index=True)
                     #print (df)
                 #Fill in end
@@ -104,7 +104,7 @@ def get_route(hostname):
                 timeReceived = time.time()
                 timeLeft = timeLeft - howLongInSelect
                 if timeLeft <= 0:
-                    tOut= "Timeout"
+                    tOut= "timeout"
                     df=df.append({'Hop Count':ttl, 'Try':tries + 1, 'IP':tOut, 'Hostname':tOut, 'Response Code':tOut}, ignore_index=True)
 
             #Fill in start
